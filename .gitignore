@@ -1,0 +1,10 @@
+# Ignore large files
+*.zip
+error_log
+tmp/
+
+# Database config (sensitive)
+includes/config.inc.php
+
+# Cache files
+*.cache
