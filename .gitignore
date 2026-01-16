@@ -2,9 +2,9 @@
 *.zip
 error_log
 tmp/
+gmoplus_jobs_extracted/
 
-# Database config (sensitive)
-includes/config.inc.php
+# Sensitive files
 .env
 
 # Cache files
