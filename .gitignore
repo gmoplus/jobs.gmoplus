@@ -5,6 +5,14 @@ tmp/
 
 # Database config (sensitive)
 includes/config.inc.php
+.env
 
 # Cache files
 *.cache
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
