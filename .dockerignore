@@ -1,0 +1,83 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+error_log
+
+# Temp files
+tmp/
+*.cache
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# Extracted folders
+gmoplus_jobs_extracted/
+
+# Development/backup files
+backup/
+*.bak
+
+# Sensitive files (will be set via env vars)
+.env
+.env.*
+
+# Test files
+**/tests/
+**/test/
+**/*Test.php
+**/*_test.php
+
+# Documentation
+**/docs/
+**/doc/
+**/*.md
+!README.md
+
+# Examples (these are taking huge space)
+**/examples/
+**/example/
+**/sample/
+**/samples/
+**/demo/
+**/demos/
+
+# Unnecessary vendor files
+**/vendor/**/tests/
+**/vendor/**/Tests/
+**/vendor/**/test/
+**/vendor/**/docs/
+**/vendor/**/doc/
+**/vendor/**/.git/
+**/vendor/**/*.md
+**/vendor/**/*.txt
+**/vendor/**/phpunit.xml*
+**/vendor/**/composer.lock
+
+# Plugin unnecessary files  
+**/plugins/**/tests/
+**/plugins/**/Tests/
+**/plugins/**/examples/
+**/plugins/**/docs/
+
+# TCPDF examples (very large)
+**/tcpdf/examples/
+
+# PHPUnit and testing
+**/phpunit/
+**/phpspec/
+**/mockery/
+
+# CI/CD files
+.github/
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
