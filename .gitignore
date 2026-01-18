@@ -1,18 +1,70 @@
-# Ignore large files
+# ================================
+# LARGE FILES & ARCHIVES
+# ================================
 *.zip
-error_log
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ================================
+# VENDOR DIRECTORIES (install via composer)
+# ================================
+vendor/
+**/vendor/
+
+# ================================
+# TEMP & CACHE
+# ================================
 tmp/
+*.cache
+error_log
 gmoplus_jobs_extracted/
 
-# Sensitive files
+# ================================
+# SENSITIVE FILES
+# ================================
 .env
+.env.local
+.env.*.local
+config.inc.php
 
-# Cache files
-*.cache
-
-# IDE
+# ================================
+# IDE & EDITOR
+# ================================
 .idea/
 .vscode/
+*.swp
+*.swo
+*~
 
-# Logs
+# ================================
+# LOGS
+# ================================
 *.log
+logs/
+
+# ================================
+# TEST & DOCS (not needed in prod)
+# ================================
+**/tests/
+**/Tests/
+**/test/
+**/docs/
+**/doc/
+**/examples/
+**/example/
+
+# ================================
+# OS FILES
+# ================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ================================
+# BACKUP FILES
+# ================================
+backup/
+*.bak
+*.backup
