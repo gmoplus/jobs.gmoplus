@@ -44,17 +44,28 @@ COPY . /var/www/html/
 # Copy production config as main config
 RUN cp /var/www/html/includes/config.inc.php.production /var/www/html/includes/config.inc.php
 
+# Create required directories for Smarty and sessions
+RUN mkdir -p /var/www/html/tmp/compile \
+    && mkdir -p /var/www/html/tmp/aCompile \
+    && mkdir -p /var/www/html/tmp/cache \
+    && mkdir -p /var/www/html/tmp/upload \
+    && mkdir -p /var/www/html/tmp/sessions \
+    && mkdir -p /var/www/html/files
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
-    && mkdir -p /var/www/html/tmp \
-    && chmod 777 /var/www/html/tmp
+    && chmod -R 777 /var/www/html/tmp \
+    && chmod -R 777 /var/www/html/files
 
-# PHP configuration
-RUN echo "upload_max_filesize = 64M" >> /usr/local/etc/php/conf.d/uploads.ini \
-    && echo "post_max_size = 64M" >> /usr/local/etc/php/conf.d/uploads.ini \
-    && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini \
-    && echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini
+# PHP configuration - session and upload settings
+RUN echo "upload_max_filesize = 64M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "post_max_size = 64M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "session.save_path = /var/www/html/tmp/sessions" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "session.gc_probability = 1" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "session.gc_divisor = 100" >> /usr/local/etc/php/conf.d/custom.ini
 
 # Expose port 80
 EXPOSE 80
