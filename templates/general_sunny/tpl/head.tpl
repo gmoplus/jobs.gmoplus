@@ -48,6 +48,7 @@
 <![endif]-->
 
 <script src="{$smarty.const.RL_LIBS_URL}jquery/jquery.js?rev={$config.static_files_revision}"></script>
+<script src="{$smarty.const.RL_LIBS_URL}jquery/cookie.js?rev={$config.static_files_revision}"></script>
 <script src="{$smarty.const.RL_LIBS_URL}javascript/system.lib.js?rev={$config.static_files_revision}"></script>
 <script src="{$smarty.const.RL_LIBS_URL}jquery/jquery.ui.js?rev={$config.static_files_revision}"></script>
 <script src="{$smarty.const.RL_LIBS_URL}jquery/datePicker/i18n/ui.datepicker-{$smarty.const.RL_LANG_CODE|lower}.js?rev={$config.static_files_revision}"></script>
