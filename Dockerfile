@@ -15,14 +15,14 @@ RUN apt-get update && apt-get install -y \
 # Configure and install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
-        pdo \
-        pdo_mysql \
-        mysqli \
-        gd \
-        mbstring \
-        zip \
-        intl \
-        opcache
+    pdo \
+    pdo_mysql \
+    mysqli \
+    gd \
+    mbstring \
+    zip \
+    intl \
+    opcache
 
 # Install Redis extension
 RUN pecl install redis && docker-php-ext-enable redis
@@ -40,6 +40,9 @@ RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/Allo
 
 # Copy application files
 COPY . /var/www/html/
+
+# Copy production config as main config
+RUN cp /var/www/html/includes/config.inc.php.production /var/www/html/includes/config.inc.php
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \

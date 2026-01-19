@@ -68,7 +68,7 @@ define('RL_REDIS_HOST', getenv('REDIS_HOST') ?: '127.0.0.1');
 define('RL_REDIS_PORT', getenv('REDIS_PORT') ?: 6379);
 
 /* YOU ARE NOT PERMITTED TO MODIFY THE CODE BELOW */
-define('RL_SETUP', 'JGxpY2Vuc2VfZG9tYWluID0gImdtb3dpbmpvYnMub25saW5lIjskbGljZW5zZV9udW1iZXIgPSAiRkw2RjY4QkRXWEcwIjs=');
+define('RL_SETUP', 'JGxpY2Vuc2VfZG9tYWluID0gImpvYnMuZ21vcGx1cy5jb20iOyRsaWNlbnNlX251bWJlciA9ICJGTDZGNjhCRFdYRzAiOw==');
 /* END CODE */
 
 /* define system variables end */
